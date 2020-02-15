@@ -161,3 +161,5 @@ systemctl enable nginx
 ```bash
 setsebool -P httpd_can_network_connect 1
 ```
+## Resources
+[How To Set Up Django with Postgres, Nginx, and Gunicorn on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-centos-7).
