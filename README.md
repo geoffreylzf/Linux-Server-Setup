@@ -33,6 +33,15 @@ Note 2: check Python 3.8 version
 python3.8 -V
 ```
 
+### Install Nodejs12
+1. Install necessary package
+```bash
+curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+yum clean all
+yum install gcc-c++ make
+yum install nodejs
+```
+
 ### Install VirtualBox Guest Addition
 This installation is to easy interaction with centos when in virtualbox
 
