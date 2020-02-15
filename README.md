@@ -99,6 +99,7 @@ export DJANGO_SETTINGS_MODULE={project-name}.settings.production
 python manage.py runserver 0.0.0.0:80
 ```
 You can try to access from localhost
+
 You will need to open port 80 in order for outside to access the Django app
 
 ### Configure Firewall to open port 80
