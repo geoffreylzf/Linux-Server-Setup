@@ -122,3 +122,7 @@ nano nginx.conf
 systemctl start nginx
 systemctl enable nginx
 ```
+4. Run the following command to open httpd network connect
+```bash
+setsebool -P httpd_can_network_connect 1
+```
