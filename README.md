@@ -112,8 +112,13 @@ firewall-cmd --reload
 ```bash
 yum install nginx
 ```
-2. Open nginx folder and edit configuration file
+2. Open nginx folder and edit configuration file (Refer respository nginx.conf)
 ```bash
 cd /etc/nginx
 nano nginx.conf
+```
+3. Start and enable Nginx
+```bash
+systemctl start nginx
+systemctl enable nginx
 ```
