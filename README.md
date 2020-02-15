@@ -15,7 +15,7 @@ yum update
 ```bash
 yum install gcc openssl-devel bzip2-devel libffi-devel make xz-devel
 ```
-2. Go to `/opt` folder to download compressed file, extract and compile and install.
+2. Go to `/opt` folder to download compressed file, extract and compile and install
 ```bash
 cd /opt
 wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgz
@@ -24,7 +24,7 @@ cd Python-3.8.1
 ./configure --enable-optimizations
 make altinstall
 ```
-Note 1: remove the downloaded file.
+Note 1: remove the downloaded file
 ```bash
 rm Python-3.8.1.tgz
 ```
@@ -107,4 +107,8 @@ You will need to open port 80 in order for outside to access the Django app
 firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --reload
 ```
-
+### Configure Nginx
+1. Install Nginx
+```bash
+yum install nginx
+```
