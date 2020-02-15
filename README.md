@@ -60,5 +60,50 @@ cd /run/media/{current-user}/VBox{version}/
 ```bash
 yum install git
 ```
+### Install Django Application
+1. Run the following command if the Django app required to access mysql
+```bash
+yum install mysql-devel
+```
+2. Create Folder for Django app
+```bash
+cd /home
+mkdir /src/python
+```
+3. Clone Django app from git and open the folder
+```bash
+git clone {link}
+cd {project-name}
+```
+4. Configure environment settings for Django app
+```bash
+cd /{project-name}/settings
+copy .env.example .env
+vi .env
+cd ..
+cd ..
+```
+5. Install virtualenv package and create venv for Django app
+```bash
+pip3.8 install virtualenv
+virtualenv venv
+```
+6. Activate virtualenv and install required python library
+```bash
+source venv/bin/activate
+pip install -r requirements.txt
+```
+The following command is to test the Django app
+```bash
+export DJANGO_SETTINGS_MODULE={project-name}.settings.production
+python manage.py runserver 0.0.0.0:80
+```
+You can try to access from localhost
+You will need to open port 80 in order for outside to access the Django app
 
+### Configure Firewall to open port 80
+```bash
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --reload
+```
 
