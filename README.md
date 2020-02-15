@@ -33,7 +33,7 @@ Note 2: check Python 3.8 version
 python3.8 -V
 ```
 
-### Install Nodejs12
+### Install Nodejs 12
 1. Install necessary package
 ```bash
 curl -sL https://rpm.nodesource.com/setup_12.x | bash -
@@ -87,7 +87,7 @@ cd {project-name}
 4. Configure environment settings for Django app
 ```bash
 cd /{project-name}/settings
-copy .env.example .env
+cp .env.example .env
 vi .env
 cd ..
 cd ..
@@ -110,6 +110,32 @@ python manage.py runserver 0.0.0.0:80
 You can try to access from localhost
 
 You will need to open port 80 in order for outside to access the Django app
+
+### Install Nuxt Application
+1. Create Folder for Nuxt app
+```bash
+cd /home
+mkdir /src/nodejs
+```
+2. Clone Nuxt app from git and open the folder
+```bash
+git clone {link}
+cd {project-name}
+```
+3. Configure environment settings for Nuxt app
+```bash
+cp .env.example .env
+vi .env
+```
+4. Install required library
+```bash
+npm ci
+```
+5. Build and run the Nuxt app
+```bash
+npm run build
+npm run start
+```
 
 ### Configure Firewall to open port 80
 ```bash
