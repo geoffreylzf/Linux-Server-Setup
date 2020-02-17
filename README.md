@@ -67,9 +67,12 @@ python3.8 -V
 ```
 
 ### Install Nodejs 12
-1. Install necessary package
+1. Add link to installer (You might need login as root)
 ```bash
 curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+```
+2. Install necessary package
+```bash
 yum clean all
 yum install gcc-c++ make
 yum install nodejs
