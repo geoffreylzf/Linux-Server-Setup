@@ -8,14 +8,14 @@ When installing Centos 8, makesure to create root user and admin user
 1. VirtualBox Setting
 * Set `Network Adapter` to `Bridged Adapter`
 * Set `General > Advanced > Shared Clipboard` to `Bidirectional`
-1. Setup network to enable internet connection (Makesure to set Network to Bridged Adapter at VirtualBox)
-2. Login as root
-3. Add admin as sudoers
+2. Setup network to enable internet connection (Makesure to set Network to Bridged Adapter at VirtualBox)
+3. Login as root
+4. Add admin as sudoers
 ```bash
 usermod -aG wheel admin
 ```
-4. Login as admin (most of command might need to add `sudo` infront
-5. Update centos
+5. Login as admin (most of command might need to add `sudo` infront
+6. Update centos
 ```bash
 yum update
 ```
