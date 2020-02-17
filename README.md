@@ -236,6 +236,24 @@ ln -sf releases/v1/eperp2app current
 ```
 
 Your folder structure should look like this
+```bash
+├── releases
+│   ├── v1 
+│   │   └── eperp2app
+│   ├── v2
+├── current -> releases/v1/eperp2app
+└── ecosystem.config.js
+```
+
+6. Perform pm2 auto startup 
+```bash
+pm2 startup
+```
+7. Start and register the nuxt application for auto startup
+```bash
+pm2 start
+pm2 save
+```
 
 ## Useful command to check error
 ```bash
@@ -243,4 +261,5 @@ journalctl
 ```
 
 ## Resources
+[PM2 Startup Script Generator](https://pm2.keymetrics.io/docs/usage/startup/)
 [How To Set Up Django with Postgres, Nginx, and Gunicorn on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-centos-7).
