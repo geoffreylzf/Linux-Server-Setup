@@ -177,23 +177,28 @@ systemctl enable nginx
 setsebool -P httpd_can_network_connect 1
 ```
 ### Setup Gunicorn/Uvicorn to serve Django Application
-
+1. Activate the venv first, then install gunicorn
+```bash
+pip install gunicorn
+```
+2. Create service file at correct folder (Refer respository gunicorn-eperp2api.conf), start it afterward
 ```bash
 cd /etc/systemd/system
 nano gunicorn-{projectname}.service
 systemctl start gunicorn
 ```
-
+3. You might face error due to selinux, run the following command to get rid of it
 ```bash
 ausearch -c 'gunicorn' --raw | audit2allow -M my-gunicorn
 semodule -i my-gunicorn.pp
 ```
-
+4. Restart gunicorn and enable it for auto startup
 ```bash
 systemctl restart gunicorn
 systemctl enable gunicorn
 ```
-Run the following command when selinux prevent access tcp port
+
+Run the following command when selinux prevent access tcp port (Happen during Django app access database)
 ```bash
 setsebool -P nis_enabled 1
 ```
@@ -214,8 +219,6 @@ cp eperp2app/ecosystem.config.js pm2/ecosystem.config.js
 mv eperp2app pm2/releases/v1/
 ln -sf releases/v1/eperp2app current
 ```
-
-
 
 ## Useful command to check error
 ```bash
