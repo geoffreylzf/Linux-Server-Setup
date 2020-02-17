@@ -204,12 +204,23 @@ ps aux | grep gunicorn | grep eperp2api | awk '{print $2}'| xargs kill -HUP
 ```
 
 ### Setup PM2 to serve Nuxt Application
+```bash
+npm install pm2 -g
+cd /home/admin/src/nodejs
+mkdir pm2
+mkdir pm2/releases/
+mkdir pm2/releases/v1
+cp eperp2app/ecosystem.config.js pm2/ecosystem.config.js
+mv eperp2app pm2/releases/v1/
+ln -sf releases/v1/eperp2app current
+```
+
+
 
 ## Useful command to check error
 ```bash
 journalctl
 ```
-
 
 ## Resources
 [How To Set Up Django with Postgres, Nginx, and Gunicorn on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-centos-7).
