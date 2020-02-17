@@ -9,12 +9,35 @@ When installing Centos 8, makesure to create root user and admin user
 2. Login as root
 3. Add admin as sudoers
 ```bash
-usermod -aG wheel user
+usermod -aG wheel admin
 ```
 4. Login as admin
 5. Update centos
 ```bash
 yum update
+```
+
+### Install VirtualBox Guest Addition
+This installation is to easy interaction with centos when in virtualbox
+
+1. Install necessary packages
+```bash
+dnf install epel-release
+dnf install dkms kernel-devel kernel-headers gcc make bzip2 perl
+```
+2. Check kernel version
+```bash
+rpm -q kernel-devel
+uname -r
+```
+3. If both is not same, update the kernel by 
+```bash
+dnf update kernel-{version}
+```
+4. At the virtualBox console, click `Devices > Install Guest Additions CD Image...`, run the following command to complete install
+```bash
+cd /run/media/{current-user}/VBox{version}/
+./VBoxLinuxAdditions.run
 ```
 
 ### Install Python 3.8.1
@@ -49,28 +72,7 @@ yum install gcc-c++ make
 yum install nodejs
 ```
 
-### Install VirtualBox Guest Addition
-This installation is to easy interaction with centos when in virtualbox
 
-1. Install necessary packages
-```bash
-dnf install epel-release
-dnf install dkms kernel-devel kernel-headers gcc make bzip2 perl
-```
-2. Check kernel version
-```bash
-rpm -q kernel-devel
-uname -r
-```
-3. If both is not same, update the kernel by 
-```bash
-dnf update kernel-{version}
-```
-4. At the virtualBox console, click `Devices > Install Guest Additions CD Image...`, run the following command to complete install
-```bash
-cd /run/media/{current-user}/VBox{version}/
-./VBoxLinuxAdditions.run
-```
 
 ### Install Git
 ```bash
