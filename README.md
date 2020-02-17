@@ -91,7 +91,7 @@ yum install mysql-devel
 ```
 2. Create Folder for Django app
 ```bash
-cd /home
+cd ~
 mkdir /src/python
 ```
 3. Clone Django app from git and open the folder
@@ -129,7 +129,7 @@ You will need to open port 80 in order for outside to access the Django app
 ### Install Nuxt Application
 1. Create Folder for Nuxt app
 ```bash
-cd /home
+cd ~
 mkdir /src/nodejs
 ```
 2. Clone Nuxt app from git and open the folder
