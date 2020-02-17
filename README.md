@@ -1,27 +1,27 @@
 # Linux-Server-Setup
 
-## Install Centos 8
+## Install CentOS 8
 [Refer this link](https://knowledgeofthings.com/installation-guide-centos-linux-oracle-vm-virtualbox-windows-10/).
 
-### After Install Centos 8
-When installing Centos 8, makesure to create root user and admin user
+### After Install CentOS 8
+When installing Centos 8, make sure to create root user and admin user
 1. VirtualBox Setting
 * Set `Network Adapter` to `Bridged Adapter`
 * Set `General > Advanced > Shared Clipboard` to `Bidirectional`
-2. Setup network to enable internet connection (Makesure to set Network to Bridged Adapter at VirtualBox)
+2. Setup network to enable internet connection
 3. Login as root
 4. Add admin as sudoers
 ```bash
 usermod -aG wheel admin
 ```
 5. Login as admin (most of command might need to add `sudo` in front of it)
-6. Update centos
+6. Update CentOS
 ```bash
 yum update
 ```
 
 ### Install VirtualBox Guest Addition
-This installation is to easy interaction with centos when in virtualbox
+This installation is to have easy interaction with CentOS when in virtualbox
 
 1. Install necessary packages
 ```bash
@@ -48,7 +48,7 @@ cd /run/media/{current-user}/VBox{version}/
 ```bash
 yum install gcc openssl-devel bzip2-devel libffi-devel make xz-devel
 ```
-2. Go to `/opt` folder to download compressed file, extract and compile and install
+2. Go to `/opt` folder to download compressed file, extract, compile and install
 ```bash
 cd /opt
 wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgz
@@ -124,7 +124,7 @@ python manage.py runserver 0.0.0.0:80
 ```
 You can try to access from localhost
 
-You will need to open port 80 in order for outside to access the Django app
+You will need to open firewall port 80 in order for outside to access the Django app
 
 ### Install Nuxt Application
 1. Create Folder for Nuxt app
