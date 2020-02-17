@@ -209,16 +209,33 @@ ps aux | grep gunicorn | grep eperp2api | awk '{print $2}'| xargs kill -HUP
 ```
 
 ### Setup PM2 to serve Nuxt Application
+1. Install pm2 at global scope
 ```bash
 npm install pm2 -g
+```
+2. Go to nodejs folder and create necessary folder
+```bash
 cd /home/admin/src/nodejs
 mkdir pm2
 mkdir pm2/releases/
 mkdir pm2/releases/v1
+mkdir pm2/releases/v2
+```
+3. Copy the ecosystem.config.js (make any amendment if required)
+```bash
 cp eperp2app/ecosystem.config.js pm2/ecosystem.config.js
+```
+4. Move the previous app to v1 folder
+```bash
 mv eperp2app pm2/releases/v1/
+```
+5. Create symlink (shortcut) for the app to current folder
+```bash
+cd pm2
 ln -sf releases/v1/eperp2app current
 ```
+
+Your folder structure should look like this
 
 ## Useful command to check error
 ```bash
