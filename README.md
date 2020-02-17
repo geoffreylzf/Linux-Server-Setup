@@ -4,8 +4,15 @@
 [Refer this link](https://knowledgeofthings.com/installation-guide-centos-linux-oracle-vm-virtualbox-windows-10/).
 
 ### After Install Centos 8
-1. Login as root
-2. Update centos
+When installing Centos 8, makesure to create root user and admin user
+1. Setup network to enable internet connection
+2. Login as root
+3. Add admin as sudoers
+```bash
+usermod -aG wheel user
+```
+4. Login as admin
+5. Update centos
 ```bash
 yum update
 ```
