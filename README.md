@@ -193,6 +193,10 @@ semodule -i my-gunicorn.pp
 systemctl restart gunicorn
 systemctl enable gunicorn
 ```
+Run the following command when selinux prevent access tcp port
+```bash
+setsebool -P nis_enabled 1
+```
 
 Command to restart gunicorn after git pull
 ```bash
@@ -200,6 +204,12 @@ ps aux | grep gunicorn | grep eperp2api | awk '{print $2}'| xargs kill -HUP
 ```
 
 ### Setup PM2 to serve Nuxt Application
+
+## Useful command to check error
+```bash
+journalctl
+```
+
 
 ## Resources
 [How To Set Up Django with Postgres, Nginx, and Gunicorn on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-centos-7).
