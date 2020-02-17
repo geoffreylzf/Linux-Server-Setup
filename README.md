@@ -194,6 +194,11 @@ systemctl restart gunicorn
 systemctl enable gunicorn
 ```
 
+Command to restart gunicorn after git pull
+```bash
+ps aux | grep gunicorn | grep eperp2api | awk '{print $2}'| xargs kill -HUP
+```
+
 ### Setup PM2 to serve Nuxt Application
 
 ## Resources
