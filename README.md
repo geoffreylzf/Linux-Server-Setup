@@ -11,7 +11,7 @@ When installing Centos 8, makesure to create root user and admin user
 ```bash
 usermod -aG wheel admin
 ```
-4. Login as admin
+4. Login as admin (most of command might need to add `sudo` infront
 5. Update centos
 ```bash
 yum update
