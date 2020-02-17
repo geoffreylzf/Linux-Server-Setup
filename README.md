@@ -177,6 +177,23 @@ systemctl enable nginx
 setsebool -P httpd_can_network_connect 1
 ```
 ### Setup Gunicorn/Uvicorn to serve Django Application
+
+```bash
+cd /etc/systemd/system
+nano gunicorn-{projectname}.service
+systemctl start gunicorn
+```
+
+```bash
+ausearch -c 'gunicorn' --raw | audit2allow -M my-gunicorn
+semodule -i my-gunicorn.pp
+```
+
+```bash
+systemctl restart gunicorn
+systemctl enable gunicorn
+```
+
 ### Setup PM2 to serve Nuxt Application
 
 ## Resources
