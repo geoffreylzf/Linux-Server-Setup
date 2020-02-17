@@ -264,4 +264,5 @@ journalctl
 
 ## Resources
 [PM2 Startup Script Generator](https://pm2.keymetrics.io/docs/usage/startup/)
+
 [How To Set Up Django with Postgres, Nginx, and Gunicorn on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-centos-7).
