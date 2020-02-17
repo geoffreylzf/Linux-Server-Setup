@@ -249,7 +249,7 @@ Your folder structure should look like this
 ```bash
 pm2 startup
 ```
-Note: after perform the above step and its instruction, you might to able to start pm2 service due started pm2 daemon. Restart centos or kill pm2 process
+Note: after perform the above step and its instruction, you might unable to start pm2 service due started pm2 daemon. Restart centos or kill pm2 process
 
 7. Start and register the nuxt application for auto startup
 ```bash
