@@ -97,11 +97,11 @@ mkdir /src/python
 3. Clone Django app from git and open the folder
 ```bash
 git clone {link}
-cd {project-name}
+cd eperp2api
 ```
 4. Configure environment settings for Django app
 ```bash
-cd /{project-name}/settings
+cd /eperp2api/settings
 cp .env.example .env
 vi .env
 cd ..
@@ -119,7 +119,7 @@ pip install -r requirements.txt
 ```
 The following command is to test the Django app
 ```bash
-export DJANGO_SETTINGS_MODULE={project-name}.settings.production
+export DJANGO_SETTINGS_MODULE=eperp2api.settings.production
 python manage.py runserver 0.0.0.0:80
 ```
 You can try to access from localhost
@@ -135,7 +135,7 @@ mkdir /src/nodejs
 2. Clone Nuxt app from git and open the folder
 ```bash
 git clone {link}
-cd {project-name}
+cd eperp2app
 ```
 3. Configure environment settings for Nuxt app
 ```bash
@@ -184,7 +184,7 @@ pip install gunicorn
 2. Create service file at correct folder (Refer respository gunicorn-eperp2api.conf), start it afterward
 ```bash
 cd /etc/systemd/system
-nano gunicorn-{projectname}.service
+nano gunicorn-eperp2api.service
 systemctl start gunicorn
 ```
 3. You might face error due to selinux, run the following command to get rid of it
