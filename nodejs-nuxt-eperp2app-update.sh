@@ -1,4 +1,4 @@
-#!/bash/bash
+#!/bin/bash
 
 cd /home/admin/src/nodejs/pm2
 
