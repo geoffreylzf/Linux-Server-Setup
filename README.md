@@ -78,11 +78,10 @@ yum install gcc-c++ make
 yum install nodejs
 ```
 
-
-
 ### Install Git
 ```bash
 yum install git
+git config --global credential.helper cache
 ```
 ### Install Django Application
 1. Run the following command if the Django app required to access mysql
