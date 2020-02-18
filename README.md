@@ -231,7 +231,7 @@ mv eperp2app pm2/releases/v1/
 5. Create symlink (shortcut) for the app to `current` folder
 ```bash
 cd pm2
-ln -sf releases/v1/eperp2app current
+ln -sfn releases/v1/eperp2app current
 ```
 
 Your folder structure should look like this
