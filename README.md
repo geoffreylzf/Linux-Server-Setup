@@ -201,10 +201,10 @@ Run the following command when selinux prevent access tcp port (Happen during Dj
 ```bash
 setsebool -P nis_enabled 1
 ```
-
-Command to restart gunicorn after git pull
+###### Update bash script
+Copy `python-django-eperp2api-update.sh` to `/home/admin/src/`, run the following command to perform git pull and update to live with 0 down time
 ```bash
-ps aux | grep gunicorn | grep eperp2api | awk '{print $2}'| xargs kill -HUP
+bash python-django-eperp2api-update.sh
 ```
 
 ### Setup PM2 to serve Nuxt Application
@@ -255,8 +255,8 @@ Note: after perform the above step and its instruction, you might unable to star
 pm2 start
 pm2 save
 ```
-
-8. Copy `nodejs-nuxt-eperp2app-update.sh` to `/home/admin/src/`, run the following command to perform git pull and update to live with 0 down time
+###### Update bash script
+Copy `nodejs-nuxt-eperp2app-update.sh` to `/home/admin/src/`, run the following command to perform git pull and update to live with 0 down time
 ```bash
 bash nodejs-nuxt-eperp2app-update.sh
 ```
