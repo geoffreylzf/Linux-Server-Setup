@@ -42,6 +42,17 @@ dnf update kernel-{version}
 cd /run/media/{current-user}/VBox{version}/
 ./VBoxLinuxAdditions.run
 ```
+### Enable Web Console Cockpit
+1.Enable by running following command
+```bash
+systemctl enable --now cockpit.socket
+```
+2. Open firewall for for cockpit
+```bash
+firewall-cmd --add-service=cockpit --permanent
+firewall-cmd --reload
+```
+3. Now you can open the web through web browser by port 9090
 
 ### Install Python 3.8.1
 1. Install necessary packages for compile python.
