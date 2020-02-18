@@ -256,7 +256,7 @@ pm2 start
 pm2 save
 ```
 
-8. Copy nodejs-nuxt-eperp2app-update.sh to /home/admin/src/, run the following command to perform git pull and update to live with 0 down time
+8. Copy `nodejs-nuxt-eperp2app-update.sh` to `/home/admin/src/`, run the following command to perform git pull and update to live with 0 down time
 ```bash
 bash nodejs-nuxt-eperp2app-update.sh
 ```
