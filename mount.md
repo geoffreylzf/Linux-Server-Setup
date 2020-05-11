@@ -23,8 +23,7 @@ sudo mount 192.168.8.251:/volume1/eperp /mnt/nas001 -vvv
 
 > `-vvv` is for showing connection log
 
-Note 1
-Run the following command to show export list from NAS
+Note 1:Run the following command to show export list from NAS
 ```bash
 showmount -e 192.168.8.251
 ```
