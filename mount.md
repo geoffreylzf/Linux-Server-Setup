@@ -5,6 +5,10 @@ sudo mount -t cifs //<ip>/<folder_name> -o username=<username>,password=<passwor
 ## NAS Synology Share Folder
 [Refer this link to setup permission at NAS server](https://www.synology.com/en-us/knowledgebase/DSM/tutorial/File_Sharing/How_to_access_files_on_Synology_NAS_within_the_local_network_NFS)
 
+> Additional steps to setup permission for folder to allow non root user to access
+1. Allow `Read/Write` permission for `Local Groups` administrators
+2. Set `NFS Permission` squash for `Map all users to admin`
+
 1. Create mount folder at `/mnt`
 ```bash
 cd /mnt
