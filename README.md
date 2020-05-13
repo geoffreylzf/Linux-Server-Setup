@@ -272,6 +272,12 @@ Copy `nodejs-nuxt-eperp2app-update.sh` to `/home/admin/src/`, run the following 
 bash nodejs-nuxt-eperp2app-update.sh
 ```
 
+### Allow gunicorn to upload file to mounted folder (nas)
+```bash
+ausearch -c 'gunicorn' --raw | audit2allow -M my-gunicorn
+semodule -i my-gunicorn.pp
+```
+
 ## Useful command to check error
 ```bash
 journalctl
