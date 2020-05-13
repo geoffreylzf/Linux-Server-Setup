@@ -272,10 +272,18 @@ Copy `nodejs-nuxt-eperp2app-update.sh` to `/home/admin/src/`, run the following 
 bash nodejs-nuxt-eperp2app-update.sh
 ```
 
-### Allow gunicorn to upload file to mounted folder (nas)
+### Allow gunicorn to upload file to mounted nfs folder (nas)
 ```bash
 ausearch -c 'gunicorn' --raw | audit2allow -M my-gunicorn
 semodule -i my-gunicorn.pp
+```
+
+### Allow nginx to redirect file from mounted nfs folder (nas)
+```bash
+setsebool -P httpd_use_nfs 1 
+ 
+ausearch -c 'nginx' --raw | audit2allow -M my-nginx
+semodule -i my-nginx.pp
 ```
 
 ## Useful command to check error
