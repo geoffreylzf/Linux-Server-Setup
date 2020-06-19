@@ -24,7 +24,7 @@ then
         git -C releases/v1/eperp2app/ pull
         if [ "$_full" == "full" ]
         then
-                npm ci --prefix releases/v2/eperp2app/
+                npm ci --prefix releases/v1/eperp2app/
         fi
         npm run build --prefix releases/v1/eperp2app/
 
