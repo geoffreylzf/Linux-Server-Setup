@@ -6,7 +6,7 @@ After=network.target
 User=admin
 Group=nginx
 WorkingDirectory=/home/admin/src/python/eperp2api
-ExecStart=/home/admin/src/python/eperp2api/venv/bin/gunicorn --workers 2 --bind 127.0.0.1:3000 eperp2api.wsgi:application
+ExecStart=/home/admin/src/python/eperp2api/venv/bin/gunicorn --workers 2 --bind 127.0.0.1:3000 eperp2api.asgi:application
 
 [Install]
 WantedBy=multi-user.target
