@@ -33,3 +33,12 @@ Note 1: Run the following command to show export list from NAS
 ```bash
 showmount -e 192.168.8.251
 ```
+
+3. Automount
+```bash
+sudo vi /etc/fstab
+```
+Add bottom line to end of the file
+```bash
+192.168.8.251:/volume1/eperp  /mnt/nas001 nfs default 1 2
+```
