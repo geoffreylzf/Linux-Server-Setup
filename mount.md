@@ -42,3 +42,7 @@ Add bottom line to end of the file
 ```bash
 192.168.8.251:/volume1/eperp  /mnt/nas001 nfs default 1 2
 ```
+Run following command to test fstab, if the file got error, you might not able to boost the system on next restart
+```bash
+mount -a
+```
