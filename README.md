@@ -191,7 +191,7 @@ setsebool -P httpd_can_network_connect 1
 ```bash
 pip install gunicorn
 ```
-2. Create service file at correct folder (Refer respository gunicorn-eperp2api.conf), start it afterward
+2. Create service file at correct folder (Refer respository gunicorn-eperp2api.service), start it afterward
 ```bash
 cd /etc/systemd/system
 nano gunicorn-eperp2api.service
