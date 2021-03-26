@@ -57,7 +57,7 @@ firewall-cmd --reload
 ### Install Python 3.8.1
 1. Install necessary packages for compile python.
 ```bash
-yum install gcc openssl-devel bzip2-devel libffi-devel make xz-devel
+yum install gcc openssl-devel bzip2-devel libffi-devel make xz-devel ncurses-devel
 ```
 2. Go to `/opt` folder to download compressed file, extract, compile and install
 ```bash
@@ -195,7 +195,7 @@ pip install gunicorn
 ```bash
 cd /etc/systemd/system
 nano gunicorn-eperp2api.service
-systemctl start gunicorn
+systemctl start gunicorn-eperp2api.service
 ```
 3. You might face error due to selinux, run the following command to get rid of it
 ```bash
@@ -204,14 +204,28 @@ semodule -i my-gunicorn.pp
 ```
 4. Restart gunicorn and enable it for auto startup
 ```bash
-systemctl restart gunicorn
-systemctl enable gunicorn
+systemctl restart gunicorn-eperp2api.service
+systemctl enable gunicorn-eperp2api.service
 ```
 
 Run the following command when selinux prevent access tcp port (Happen during Django app access database)
 ```bash
 setsebool -P nis_enabled 1
 ```
+
+### Setup Django-Q daemon to serve Django Scheduler
+1. Create service file at correct folder (Refer respository eperp2api-django-q-scheduler.service), start it afterward
+```bash
+cd /etc/systemd/system
+nano eperp2api-django-q-scheduler.service
+systemctl start eperp2api-django-q-scheduler.service
+```
+2. Enable Django-Q daemon for auto startup
+```bash
+systemctl enable eperp2api-django-q-scheduler.service
+```
+
+
 #### Update bash script
 Copy `python-django-eperp2api-update.sh` to `/home/admin/src/`, run the following command to perform git pull and update to live with zero down time
 ```bash
