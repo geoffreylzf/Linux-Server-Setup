@@ -1,8 +1,9 @@
 # Linux-Server-Setup
 
 #### Changes to do if resetup
-1.Upgrade python to 3.8.8 (if got newer 3.8 ver, then use it)
-2.Change gunicorn-eperp2api.service to eperp2api-gunicorn.service
+1. Upgrade python to `3.8.8` (if got newer `3.8` ver, then use it)
+
+2. Change `gunicorn-eperp2api.service` to `eperp2api-gunicorn.service`
 
 ## Install CentOS 8
 [Refer this link](https://knowledgeofthings.com/installation-guide-centos-linux-oracle-vm-virtualbox-windows-10/).
