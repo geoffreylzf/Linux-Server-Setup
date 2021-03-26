@@ -5,6 +5,8 @@
 
 2. Change `gunicorn-eperp2api.service` to `eperp2api-gunicorn.service`
 
+3. Increase drive space
+
 ## Install CentOS 8
 [Refer this link](https://knowledgeofthings.com/installation-guide-centos-linux-oracle-vm-virtualbox-windows-10/).
 
