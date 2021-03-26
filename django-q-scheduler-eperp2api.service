@@ -1,0 +1,12 @@
+[Unit]
+Description=django q scheduler eperp2api daemon
+After=gunicorn-eperp2api.service
+
+[Service]
+User=admin
+Group=nginx
+WorkingDirectory=/home/admin/src/python/eperp2api
+ExecStart=/home/admin/src/python/eperp2api/venv/bin/python manage.py qcluster 
+
+[Install]
+WantedBy=multi-user.target
