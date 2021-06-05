@@ -87,7 +87,7 @@ python3.8 -V
 ### Install Nodejs 12
 1. Add link to installer (You might need login as root)
 ```bash
-curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+curl -sL https://rpm.nodesource.com/setup_14.x | bash -
 ```
 2. Install necessary package
 ```bash
