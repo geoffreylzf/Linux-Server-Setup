@@ -9,6 +9,12 @@
 
 ## Install CentOS 8
 [Refer this link](https://knowledgeofthings.com/installation-guide-centos-linux-oracle-vm-virtualbox-windows-10/).
+#### CentOS Partition for 50Gb
+/home 10Gb
+/boot 1Gb
+/     15Gb
+/var  16Gb
+/swap 8Gb
 
 ### After Install CentOS 8
 When installing Centos 8, make sure to create root user and admin user
