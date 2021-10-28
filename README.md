@@ -297,6 +297,13 @@ Note: after perform the above step and its instruction, you might unable to star
 pm2 start
 pm2 save
 ```
+
+Note 1: Pm2 service might got problem having restart every around 90 seconds causing service 
+Go to `/etc/systemd/system/pm2-root.service` (or `/etc/systemd/system/pm2-root.service`), comment out property `PIDFile=` by placing `#` in front of line
+
+Reference [StackOverFlow](https://stackoverflow.com/questions/62814539/pm2-keeps-getting-killed-every-90-seconds-on-centos-8) & [Github](https://github.com/Unitech/pm2/issues/4776)
+
+
 #### Update bash script
 Copy `nodejs-nuxt-eperp2app-update.sh` to `/home/admin/src/`, run the following command to perform git pull and update to live with zero down time
 ```bash
