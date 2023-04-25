@@ -226,6 +226,7 @@ systemctl enable gunicorn-eperp2api.service
 ```
 
 (Additional Step to solve Gunicorn unable to start because of unable to connect MySql, cause by too early)
+
 5. Create timer file (same place as gunicorn-eperp2api.service)
 ```bash
 cd /etc/systemd/system
@@ -257,6 +258,21 @@ systemctl start eperp2api-django-q-scheduler.service
 systemctl enable eperp2api-django-q-scheduler.service
 ```
 
+(Additional Step to solve Django Q unable to start because of unable to connect MySql, cause by too early)
+
+3. Create timer file (same place as eperp2api-django-q-scheduler.service)
+```bash
+cd /etc/systemd/system
+vi eperp2api-django-q-scheduler.timer
+systemctl daemon-reload
+systemctl enable eperp2api-django-q-scheduler.timer
+systemctl start eperp2api-django-q-scheduler.timer
+```
+
+You will need to disable the eperp2api-django-q-scheduler.service if you enable it before
+```bash
+systemctl disable eperp2api-django-q-scheduler.service
+```
 
 #### Update bash script
 Copy `python-django-eperp2api-update.sh` to `/home/admin/src/`, run the following command to perform git pull and update to live with zero down time
