@@ -211,7 +211,7 @@ pip install gunicorn
 2. Create service file at correct folder (Refer respository gunicorn-eperp2api.service), start it afterward
 ```bash
 cd /etc/systemd/system
-nano gunicorn-eperp2api.service
+sys nano gunicorn-eperp2api.service
 systemctl start gunicorn-eperp2api.service
 ```
 3. You might face error due to selinux, run the following command to get rid of it
@@ -223,6 +223,21 @@ semodule -i my-gunicorn.pp
 ```bash
 systemctl restart gunicorn-eperp2api.service
 systemctl enable gunicorn-eperp2api.service
+```
+
+(Additional Step to solve Gunicorn unable to start because of unable to connect MySql, cause by too early)
+5. Create timer file (same place as gunicorn-eperp2api.service)
+```bash
+cd /etc/systemd/system
+vi gunicorn-eperp2api.timer
+systemctl daemon-reload
+systemctl enable gunicorn-eperp2api.timer
+systemctl start gunicorn-eperp2api.timer
+```
+
+You will need to disable the gunicorn-eperp2api.service if you enable it before
+```bash
+systemctl disable gunicorn-eperp2api.service
 ```
 
 Run the following command when selinux prevent access tcp port (Happen during Django app access database)
